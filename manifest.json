@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "dawestheperson.kronos",
+  "name": "Kronos",
+  "version": "0.1.0",
+  "author": "dawestheperson",
+  "license": "MIT",
+  "description": "Your assistant's memory in the bar: how much it remembers and how warm, one click to open the calendar, search and reader. Needs the kronos program.",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Kronos",
+    "description": "Memory of past conversations: left click opens Kronos, right click checks and repairs it.",
+    "category": "AI",
+    "aliases": ["kronos", "memory", "history", "recall"],
+    "allowMultiple": false,
+    "defaults": {
+      "command": "kronos",
+      "refreshIntervalSec": 300
+    },
+    "schema": [
+      { "key": "command", "type": "string", "label": "Kronos program", "defaultValue": "kronos", "description": "The kronos command, or its full path if it is not on your PATH." },
+      { "key": "refreshIntervalSec", "type": "integer", "label": "Refresh every (seconds)", "min": 30, "max": 3600, "step": 30, "defaultValue": 300 }
+    ]
+  },
+  "homepage": "https://github.com/dawestheperson/kronos"
+}
